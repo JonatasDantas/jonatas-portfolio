@@ -1,0 +1,36 @@
+.app {
+    .navbar {
+        background-color: #1b242f;
+        border-bottom: 3px solid #04c2c9;
+
+        .toolbar {
+            padding-left: 70px;
+
+            .nav-item {
+                margin: 0 10px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            position: fixed;
+
+            .toolbar {
+                padding-left: 16px;
+
+                .nav-item {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .MuiDrawer-root {
+        width: 240px;
+
+        .MuiDrawer-paper {
+            width: 240px;
+        }
+    }
+}
