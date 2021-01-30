@@ -6,8 +6,22 @@
         .toolbar {
             padding-left: 70px;
 
+            .drawer-toggle {
+                display: none;
+            }
+
             .nav-item {
-                margin: 0 10px;
+                margin: 0 12px;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    transition: 0.7s;
+
+                    &.active {
+                        color: #e31b6d;
+                    }
+                }
             }
         }
 
@@ -16,6 +30,10 @@
 
             .toolbar {
                 padding-left: 16px;
+
+                .drawer-toggle {
+                    display: inline-flex;
+                }
 
                 .nav-item {
                     display: none;
@@ -31,6 +49,21 @@
 
         .MuiDrawer-paper {
             width: 240px;
+            background-color: #313943;
+
+            .MuiList-root {
+                color: #fff;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    display: flex;
+                }
+
+                .MuiListItemIcon-root {
+                    color: #fff;
+                }
+            }
         }
     }
 }

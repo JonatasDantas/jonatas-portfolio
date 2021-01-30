@@ -28,7 +28,7 @@ const Home = () => {
     const classes = useStyles();
 
     return (
-        <div className="home">
+        <section className="home" id="home">
             <div className="info">
                 <h1>Jonatas de Almeida Dantas</h1>
 
@@ -68,7 +68,7 @@ const Home = () => {
                             value: 200,
                             density: {
                                 enable: true,
-                                value_area: 1000,
+                                value_area: 900,
                             }
                         },
                     },
@@ -92,7 +92,7 @@ const Home = () => {
                     <div className="menuItem">Contato</div>
                 </div>
             </nav> */}
-        </div>
+        </section>
     )
 }
 

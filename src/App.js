@@ -2,21 +2,72 @@ import Home from './sections/home/Home';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { useScrollTrigger } from '@material-ui/core';
+
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import StarIcon from '@material-ui/icons/Star';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 
 import './App.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AboutMe from './sections/about-me/AboutMe';
 
 function App() {
-  const fixedNav = useScrollTrigger({ threshold: window.innerHeight });
-  const sections = ["Home", "Sobre mim", "Habilidades", "Projetos", "Contato"]
   const [drawerOpen, setDrawer] = useState(false);
+  const [currentSection, setCurrentSection] = useState(null);
+  const sections = [
+    {
+      text: "Home",
+      icon: <HomeIcon />,
+      section: "home",
+    },
+    {
+      text: "Sobre mim",
+      icon: <AccountBoxIcon />,
+      section: "about-me"
+    },
+    {
+      text: "Habilidades",
+      icon: <StarIcon />,
+      section: "skills"
+    },
+    {
+      text: "Projetos",
+      icon: <PhotoLibraryIcon />,
+      section: "projects"
+    },
+    {
+      text: "Contato",
+      icon: <WhatsAppIcon />,
+      section: "contact"
+    }
+  ];
+
+  useEffect(() => {
+    window.onscroll = () => {
+      const elements = document.getElementsByTagName("section");
+
+      for (const element of elements) {
+        if (!isElementOutViewport(element)) {
+          setCurrentSection(element.id);
+        }
+      }
+    }
+  }, []);
+
+  function isElementOutViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight;
+  }
 
   return (
     <div className="app">
@@ -25,6 +76,7 @@ function App() {
       <AppBar className="navbar" position="sticky">
         <Toolbar className="toolbar" variant="dense">
           <IconButton
+            className="drawer-toggle"
             color="inherit"
             aria-label="open drawer"
             onClick={() => setDrawer(true)}
@@ -33,8 +85,10 @@ function App() {
             <MenuIcon />
           </IconButton>
 
-          {sections.map((text, index) => (
-            <Typography variant="h6" className="nav-item" key={index}>{text}</Typography>
+          {sections.map((item, index) => (
+            <Typography variant="h6" className="nav-item" key={index}>
+              <a className={currentSection === item.section ? 'active' : ''} href={`#${item.section}`}>{item.text}</a>
+            </Typography>
           ))}
         </Toolbar>
       </AppBar>
@@ -44,22 +98,22 @@ function App() {
         open={drawerOpen}
         onClick={() => setDrawer(false)}
         onKeyDown={() => setDrawer(false)}
-        style={{width: 240}}
+        style={{ width: 240 }}
       >
         <List>
-          {sections.map((text, index) => (
+          {sections.map((item, index) => (
             <ListItem button key={index}>
-              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+              <a href={`#${item.section}`}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
 
-              <ListItemText primary={text} />
+                <ListItemText primary={item.text} />
+              </a>
             </ListItem>
           ))}
         </List>
 
       </SwipeableDrawer>
-      <div style={{ height: 1000 }}>
-
-      </div>
+      <AboutMe/>
     </div>
   );
 }
