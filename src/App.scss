@@ -1,3 +1,5 @@
+
+
 .app {
     .navbar {
         background-color: #1b242f;
@@ -40,6 +42,19 @@
                 }
             }
         }
+    }
+
+    .welcoming {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .divider {
+        background-color: #04c2c9;
+        border: 0;
+        border-top: 2.5px solid rgba(0, 0, 0, 0.1);
+        width: 50px;
     }
 }
 

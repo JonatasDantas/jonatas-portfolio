@@ -20,6 +20,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import './App.scss';
 import { useState, useEffect } from 'react';
 import AboutMe from './sections/about-me/AboutMe';
+import Skills from './sections/skills/Skills';
 
 function App() {
   const [drawerOpen, setDrawer] = useState(false);
@@ -93,6 +94,9 @@ function App() {
         </Toolbar>
       </AppBar>
 
+      <AboutMe/>
+      <Skills/>
+
       <SwipeableDrawer
         anchor="left"
         open={drawerOpen}
@@ -113,7 +117,6 @@ function App() {
         </List>
 
       </SwipeableDrawer>
-      <AboutMe/>
     </div>
   );
 }

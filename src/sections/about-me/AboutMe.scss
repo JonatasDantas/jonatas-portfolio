@@ -1,16 +1,92 @@
 .about-me {
-    padding: 40px;
+    padding: 40px 120px;
 
-    .welcoming {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
+    .details {
+        margin-top: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+
+        .info {
+            .text {
+                font-size: 1.2rem;
+                font-family: Courier;
+                text-align: justify;
+            }
+
+            .advantages {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-gap: 10px;
+                margin: 20px 0;
+
+                .advantage {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+
+                    .MuiAvatar-root {
+                        background: linear-gradient(to top, #04c2c9,  #0cebeb);    
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    .name {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                    }
+
+                    .description {
+                        font-size: 0.95rem;
+                        font-weight: 300;
+                    }
+                }
+
+            }
+
+            @media screen and (max-width: 768px) {
+                .text {
+                    margin-top: 20px;
+                    font-size: 1.1rem;
+                }
+
+                .advantages {
+                    margin: 30px 0;
+
+                    .advantage {
+                        padding: 0;
+
+                        .name {
+                            font-size: 1.2rem;
+                            margin: 5px 0;
+                        }
+
+                        .description {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    .divider {
-        background-color: #04c2c9;
-        border: 0;
-        border-top: 2.5px solid rgba(0, 0, 0, 0.1);
-        width: 50px;
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+
+        .details {
+            display: block;
+
+            .image {
+                height: 100%;
+                width: 100%;
+
+                .MuiAvatar-root {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
     }
 }

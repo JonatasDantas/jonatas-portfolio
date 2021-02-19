@@ -57,7 +57,7 @@ const Home = () => {
                 <br /><br />
 
                 <div className="image">
-                    <Avatar alt="Jonatas de Almeida" src={userImg} className={classes.large} />
+                    {/* <Avatar alt="Jonatas de Almeida" src={userImg} className={classes.large} /> */}
                 </div>
             </div>
 
