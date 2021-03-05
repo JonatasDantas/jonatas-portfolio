@@ -1,0 +1,30 @@
+.contact {
+    padding: 40px 120px;
+    background-color: #f5f5f5;
+
+    .text {
+        font-size: 1.1rem;
+        font-family: Courier;
+        text-align: justify;
+        margin: 40px 0;
+    }
+
+    .contact-form {
+        padding:  40px 60px;
+        border: 1px solid;
+        border-radius: 10px;
+
+        .MuiTextField-root {
+            width: 100%;
+        }
+
+        .buttons-container {
+            justify-content: flex-end;
+            margin-top: 25px;
+
+            .MuiButton-root {
+                background: linear-gradient(to right, #2ce69b, #00d68f);
+            }
+        }
+    }
+}

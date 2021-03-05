@@ -1,0 +1,27 @@
+.projects {
+    padding: 40px 120px;
+
+    .text {
+        font-size: 1.1rem;
+        font-family: Courier;
+        text-align: justify;
+        margin: 40px 0;
+    }
+
+    .projects-gallery > div {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+    
+            .wrapper {
+                height: 300px;
+    
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+    }
+}

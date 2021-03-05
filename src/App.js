@@ -1,8 +1,14 @@
-import Home from './sections/home/Home';
+import { useState, useEffect } from 'react';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
@@ -11,64 +17,64 @@ import StarIcon from '@material-ui/icons/Star';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-
-import './App.scss';
-import { useState, useEffect } from 'react';
+import Home from './sections/home/Home';
 import AboutMe from './sections/about-me/AboutMe';
 import Skills from './sections/skills/Skills';
+import Projects from './sections/projects/Projects';
+import Contact from './sections/contact/Contact';
+
+import './App.scss';
 
 function App() {
   const [drawerOpen, setDrawer] = useState(false);
   const [currentSection, setCurrentSection] = useState(null);
   const sections = [
     {
-      text: "Home",
+      text: 'Home',
       icon: <HomeIcon />,
-      section: "home",
+      section: 'home',
     },
     {
-      text: "Sobre mim",
+      text: 'Sobre mim',
       icon: <AccountBoxIcon />,
-      section: "about-me"
+      section: 'about-me',
     },
     {
-      text: "Habilidades",
+      text: 'Habilidades',
       icon: <StarIcon />,
-      section: "skills"
+      section: 'skills',
     },
     {
-      text: "Projetos",
+      text: 'Projetos',
       icon: <PhotoLibraryIcon />,
-      section: "projects"
+      section: 'projects',
     },
     {
-      text: "Contato",
+      text: 'Contato',
       icon: <WhatsAppIcon />,
-      section: "contact"
-    }
+      section: 'contact',
+    },
   ];
+
+  function isElementOutViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.bottom < 0 || rect.right < 0
+      || rect.left > window.innerWidth
+      || rect.top > window.innerHeight;
+  }
 
   useEffect(() => {
     window.onscroll = () => {
-      const elements = document.getElementsByTagName("section");
+      const elements = document.getElementsByTagName('section');
 
+      // eslint-disable-next-line no-restricted-syntax
       for (const element of elements) {
         if (!isElementOutViewport(element)) {
           setCurrentSection(element.id);
         }
       }
-    }
+    };
   }, []);
-
-  function isElementOutViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight;
-  }
 
   return (
     <div className="app">
@@ -86,16 +92,18 @@ function App() {
             <MenuIcon />
           </IconButton>
 
-          {sections.map((item, index) => (
-            <Typography variant="h6" className="nav-item" key={index}>
+          {sections.map((item) => (
+            <Typography variant="h6" className="nav-item" key={item.section}>
               <a className={currentSection === item.section ? 'active' : ''} href={`#${item.section}`}>{item.text}</a>
             </Typography>
           ))}
         </Toolbar>
       </AppBar>
 
-      <AboutMe/>
-      <Skills/>
+      <AboutMe />
+      <Skills />
+      <Projects />
+      <Contact />
 
       <SwipeableDrawer
         anchor="left"
@@ -105,8 +113,8 @@ function App() {
         style={{ width: 240 }}
       >
         <List>
-          {sections.map((item, index) => (
-            <ListItem button key={index}>
+          {sections.map((item) => (
+            <ListItem button key={item.section}>
               <a href={`#${item.section}`}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
 
