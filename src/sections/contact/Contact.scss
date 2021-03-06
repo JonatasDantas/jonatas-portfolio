@@ -27,4 +27,16 @@
             }
         }
     }
+
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+
+        .contact-form {
+            padding: 20px;
+
+            .buttons-container {
+                justify-content: center;
+            }
+        }
+    }
 }

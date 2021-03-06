@@ -16,12 +16,25 @@
     
             .wrapper {
                 height: 300px;
+                cursor: pointer;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     
                 img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
+                    border-radius: 5px;
                 }
             }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+
+        .projects-gallery > div {
+            grid-template-columns: 1fr;
+            grid-gap: 30px;
+        }
     }
 }

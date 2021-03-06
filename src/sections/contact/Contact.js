@@ -52,14 +52,14 @@ function Contact() {
       </div>
 
       <Form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
             <Input name="name" id="name" label="Nome" variant="outlined" />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <Input name="email" id="email" label="E-mail" variant="outlined" />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <Input name="phone" id="phone" label="Telefone" mask="(99) 99999-9999" variant="outlined" />
           </Grid>
           <Grid item xs={12}>
@@ -72,7 +72,14 @@ function Contact() {
             <Button type="submit" variant="contained" color="primary">Enviar Mensagem</Button>
           </Grid>
           <Grid item>
-            <Button variant="contained" color="primary" endIcon={<WhatsApp />}>Me chame no Whatsapp</Button>
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<WhatsApp />}
+              onClick={() => { window.open('https://api.whatsapp.com/send?phone=5511960126820', '_blank'); }}
+            >
+              Me chame no Whatsapp
+            </Button>
           </Grid>
         </Grid>
       </Form>
