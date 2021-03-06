@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(54),
     height: theme.spacing(66),
     display: 'inline-flex',
+    objectPosition: 'top',
   },
 }));
 
@@ -50,7 +51,7 @@ function AboutMe() {
 
       <div className="details">
         <div className="image">
-          <Avatar variant="rounded" className={classes.avatar} src={avatarImg} />
+          <Avatar className={classes.avatar} src={avatarImg} />
         </div>
 
         <div className="info">

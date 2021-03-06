@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import { useRef } from 'react';
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 
 import Via from '../../assets/img/project-via.jpg';
@@ -6,13 +9,17 @@ import './Projects.scss';
 
 function Projects() {
   const projects = [
-    { name: 'Victor Julio Fotografia', img: 'https://victorjulio.com.br/assets/img/meta-preview.PNG' },
-    { name: 'Selmar Engenharia', img: 'https://selmarengenharia.com.br/assets/meta-preview.PNG' },
-    { name: 'Projeto VIA', img: Via },
+    { name: 'Victor Julio Fotografia', img: 'https://victorjulio.com.br/assets/img/meta-preview.PNG', imgRef: useRef(null) },
+    { name: 'Selmar Engenharia', img: 'https://selmarengenharia.com.br/assets/meta-preview.PNG', imgRef: useRef(null) },
+    { name: 'Projeto VIA', img: Via, imgRef: useRef(null) },
   ];
 
+  function handleClick(project) {
+    project.imgRef.current.click();
+  }
+
   return (
-  // uncompleted
+    // uncompleted
     <section className="projects" id="projects">
       <div className="welcoming">Meus Projetos</div>
       <hr className="divider" />
@@ -25,12 +32,13 @@ function Projects() {
         <SimpleReactLightbox>
           <SRLWrapper>
             {
-                            projects.map((project) => (
-                              <div key={project.name} className="wrapper">
-                                <img alt={project.name} src={project.img} />
-                              </div>
-                            ))
-                        }
+              projects.map((project) => (
+                <div key={project.name} className="wrapper">
+                  <img alt={project.name} src={project.img} ref={project.imgRef} />
+                  <div className="overlay" onClick={() => handleClick(project)}>Veja o trabalho</div>
+                </div>
+              ))
+            }
           </SRLWrapper>
         </SimpleReactLightbox>
       </div>

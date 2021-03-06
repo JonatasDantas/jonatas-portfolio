@@ -19,12 +19,36 @@
                 cursor: pointer;
                 border-radius: 5px;
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                position: relative;
     
                 img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
                     border-radius: 5px;
+                }
+
+                .overlay {
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    z-index: 11;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    transition: all 0.8s ease;
+                    opacity: 0;
+                    color: #fff;
+                    font-size: 1.2rem;
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+
+            .wrapper:hover {
+                .overlay {
+                    opacity: 1;
                 }
             }
     }

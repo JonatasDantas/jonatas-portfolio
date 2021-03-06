@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  SwipeableDrawer,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  IconButton,
+} from '@material-ui/core';
 
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import HomeIcon from '@material-ui/icons/Home';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import StarIcon from '@material-ui/icons/Star';
-import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import {
+  Menu,
+  Home as HomeIcon,
+  AccountBox,
+  Star,
+  PhotoLibrary,
+  WhatsApp,
+} from '@material-ui/icons';
 
 import Home from './sections/home/Home';
 import AboutMe from './sections/about-me/AboutMe';
@@ -36,22 +40,22 @@ function App() {
     },
     {
       text: 'Sobre mim',
-      icon: <AccountBoxIcon />,
+      icon: <AccountBox />,
       section: 'about-me',
     },
     {
       text: 'Habilidades',
-      icon: <StarIcon />,
+      icon: <Star />,
       section: 'skills',
     },
     {
       text: 'Projetos',
-      icon: <PhotoLibraryIcon />,
+      icon: <PhotoLibrary />,
       section: 'projects',
     },
     {
       text: 'Contato',
-      icon: <WhatsAppIcon />,
+      icon: <WhatsApp />,
       section: 'contact',
     },
   ];
@@ -89,7 +93,7 @@ function App() {
             onClick={() => setDrawer(true)}
             edge="start"
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
 
           {sections.map((item) => (
