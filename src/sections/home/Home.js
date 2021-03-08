@@ -3,6 +3,7 @@ import { makeStyles, Button } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 import './Home.scss';
+import { useEffect, useRef, useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,20 +24,35 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
+  const textRef = useRef(null);
+  const textConstants = ['Freelancer', 'Programador Javascript', 'Programador Java'];
+  const [textIndex, setTextIndex] = useState(1);
+
+  useEffect(() => {
+    textRef.current.innerHTML = textConstants[textIndex];
+    textRef.current.style.animation = 'typing 4s steps(40, end), blink-caret .75s step-end infinite';
+    textRef.current.style.webkitAnimation = 'typing 4s steps(40, end), blink-caret .75s step-end infinite';
+
+    setTimeout(() => {
+      textRef.current.style.animation = 'none';
+      textRef.current.style.webkitAnimation = 'none';
+      setTextIndex((textIndex === textConstants.length - 1) ? 0 : textIndex + 1);
+    }, 4000);
+  }, [textIndex]);
 
   return (
-    <section className="home" id="home">
+    <section className="home visible" id="home">
       <div className="info">
         <h1>Jonatas de Almeida Dantas</h1>
 
         <div className="welcoming-text">
-          Olá! Meu nome é Jonatas, sou desenvolvedor Full-Stack.
-          Atuo em projetos de alta complexidade
-          que atendem milhares de clientes em todo o Brasil.
-
-          <br />
-          <br />
-          <br />
+          <span>Desenvolvedor Full-Stack</span>
+        </div>
+        <div className="welcoming-text">
+          <span>Desenvolvedor Mobile</span>
+        </div>
+        <div className="welcoming-text">
+          <span className="animated" ref={textRef}>{textConstants[0]}</span>
         </div>
 
         <Button

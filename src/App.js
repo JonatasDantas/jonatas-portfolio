@@ -74,6 +74,7 @@ function App() {
       // eslint-disable-next-line no-restricted-syntax
       for (const element of elements) {
         if (!isElementOutViewport(element)) {
+          element.classList.add('visible');
           setCurrentSection(element.id);
         }
       }
