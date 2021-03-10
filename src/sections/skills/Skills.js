@@ -7,9 +7,10 @@ import ReactLogo from '../../assets/img/react.png';
 import VueLogo from '../../assets/img/vue.png';
 import NodeLogo from '../../assets/img/nodejs.png';
 import JavaLogo from '../../assets/img/java.png';
+import SpringBootLogo from '../../assets/img/spring-boot.png';
 import IonicLogo from '../../assets/img/ionic.png';
 import FlutterLogo from '../../assets/img/flutter.png';
-import SQLLogo from '../../assets/img/sql.png';
+import SQLLogo from '../../assets/img/sql.jpg';
 import HtmlCssLogo from '../../assets/img/html-css.png';
 
 import 'slick-carousel/slick/slick.css';
@@ -53,6 +54,10 @@ function Skills() {
     {
       name: 'Java',
       logo: JavaLogo,
+    },
+    {
+      name: 'Spring Boot',
+      logo: SpringBootLogo,
     },
     {
       name: 'Ionic',

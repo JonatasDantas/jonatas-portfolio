@@ -1,15 +1,22 @@
-import { useRef } from 'react';
+/* eslint-disable no-nested-ternary */
+import { useRef, useState } from 'react';
 
-import { Button, Grid } from '@material-ui/core';
-import { WhatsApp } from '@material-ui/icons';
+import {
+  Button, Collapse, Grid, IconButton,
+} from '@material-ui/core';
+import { Close, WhatsApp } from '@material-ui/icons';
+import { Alert } from '@material-ui/lab';
 import { Form } from '@unform/web';
 
 import * as Yup from 'yup';
-import './Contact.scss';
+import emailjs from 'emailjs-com';
 import { Input } from '../../components';
+
+import './Contact.scss';
 
 function Contact() {
   const formRef = useRef();
+  const [alert, setAlert] = useState(null);
 
   async function handleSubmit(data) {
     try {
@@ -27,6 +34,19 @@ function Contact() {
       await schema.validate(data, {
         abortEarly: false,
       });
+
+      emailjs.send('service_lhhyp0k', 'template_e66p5ie', data, 'user_v8CGzXWhccEG6MdVEtZnX')
+        .then(() => {
+          setAlert({
+            success: true,
+            message: 'Obrigado pela mensagem! Irei entrar em contato assim que possível.',
+          });
+        }, () => {
+          setAlert({
+            success: false,
+            message: 'Ocorreu um erro no envio da mensagem. Por favor, tente novamente ou me chame no Whatsapp.',
+          });
+        });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const validationErrors = {};
@@ -52,6 +72,27 @@ function Contact() {
       </div>
 
       <Form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
+        <Collapse in={alert}>
+          <Alert
+            variant="filled"
+            style={{ marginBottom: 20 }}
+            severity={alert ? (alert.success ? 'success' : 'error') : ''}
+            action={(
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setAlert(null);
+                }}
+              >
+                <Close fontSize="inherit" />
+              </IconButton>
+          )}
+          >
+            {alert ? alert.message : ''}
+          </Alert>
+        </Collapse>
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Input name="name" id="name" label="Nome" variant="outlined" />

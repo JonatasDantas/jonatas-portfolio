@@ -68,6 +68,8 @@ function App() {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     window.onscroll = () => {
       const elements = document.getElementsByTagName('section');
 

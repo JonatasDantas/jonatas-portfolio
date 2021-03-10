@@ -61,6 +61,7 @@ const Home = () => {
           size="large"
           className={classes.button}
           endIcon={<ArrowForwardIcon />}
+          onClick={() => { window.location.href = '#about-me'; }}
         >
           Conheça meu trabalho
         </Button>

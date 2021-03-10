@@ -68,6 +68,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    section {
+        transition: 0.10s cubic-bezier(0.645, 0.045, 0.355, 1) 0.7s, transform 0.10s cubic-bezier(0.645, 0.045, 0.355, 1) 0.7s;
+    }
+
     .MuiDrawer-root {
         width: 240px;
 
