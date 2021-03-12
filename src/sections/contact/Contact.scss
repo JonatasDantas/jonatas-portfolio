@@ -31,6 +31,10 @@
     @media screen and (max-width: 768px) {
         padding: 20px;
 
+        .text {
+            text-align: inherit;
+        }
+
         .contact-form {
             padding: 20px;
 

@@ -4,14 +4,44 @@ import { useRef } from 'react';
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 
 import Via from '../../assets/img/project-via.jpg';
+import Empreguin from '../../assets/img/plataforma-empregos.png';
+import DatingSI from '../../assets/img/DatingSI.png';
+import FlightNow from '../../assets/img/flight-now.png';
 
 import './Projects.scss';
 
 function Projects() {
   const projects = [
-    { name: 'Victor Julio Fotografia', img: 'https://victorjulio.com.br/assets/img/meta-preview.PNG', imgRef: useRef(null) },
-    { name: 'Selmar Engenharia', img: 'https://selmarengenharia.com.br/assets/meta-preview.PNG', imgRef: useRef(null) },
-    { name: 'Projeto VIA', img: Via, imgRef: useRef(null) },
+    {
+      name: 'Victor Julio Fotografia - Website institucional responsivo para o fotógrafo Victor Julio.',
+      img: 'https://victorjulio.com.br/assets/img/meta-preview.PNG',
+      imgRef: useRef(null),
+    },
+    {
+      name: 'Selmar Engenharia - Website institucional responsivo para a empresa Selmar Engenharia.',
+      img: 'https://selmarengenharia.com.br/assets/meta-preview.PNG',
+      imgRef: useRef(null),
+    },
+    {
+      name: 'Projeto VIA - Tela de controle de funcionários com gráficos.',
+      img: Via,
+      imgRef: useRef(null),
+    },
+    {
+      name: 'Projeto FlightNow - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma agência de viagens.',
+      img: FlightNow,
+      imgRef: useRef(null),
+    },
+    {
+      name: 'Projeto DatingSI - Projeto educacional desenvolvido na Universidade de São Paulo, onde foi criado uma plataforma de relacionamentos e chat em tempo real.',
+      img: DatingSI,
+      imgRef: useRef(null),
+    },
+    {
+      name: 'Projeto Plataforma Empregos - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma plataforma de empregos.',
+      img: Empreguin,
+      imgRef: useRef(null),
+    },
   ];
 
   function handleClick(project) {

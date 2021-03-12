@@ -27,6 +27,8 @@ import Skills from './sections/skills/Skills';
 import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
 
+import Logo from './assets/img/logo-sem-fundo.png';
+
 import './App.scss';
 
 function App() {
@@ -111,6 +113,10 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <div className="footer">
+        Design By
+        <img className="footer-logo" src={Logo} alt="logo" />
+      </div>
 
       <SwipeableDrawer
         anchor="left"
@@ -130,6 +136,10 @@ function App() {
             </ListItem>
           ))}
         </List>
+
+        <div className="drawer-logo">
+          <img src={Logo} alt="logo" />
+        </div>
 
       </SwipeableDrawer>
     </div>

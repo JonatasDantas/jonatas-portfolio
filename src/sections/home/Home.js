@@ -5,6 +5,8 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import './Home.scss';
 import { useEffect, useRef, useState } from 'react';
 
+// import Logo from '../../assets/img/logo.png';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -73,6 +75,10 @@ const Home = () => {
           {/* <Avatar alt="Jonatas de Almeida" src={userImg} className={classes.large} /> */}
         </div>
       </div>
+      {/*
+      <div className="logo-wrapper">
+        <img src={Logo} alt="logo" />
+      </div> */}
 
       <Particles
         params={{

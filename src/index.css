@@ -11,6 +11,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Removed scroll styling - Causing scroll lagging */
+/* body::-webkit-scrollbar-track
+{
+    background-color: transparent;
+}
+body::-webkit-scrollbar
+{
+    width: 14px;
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+} */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
