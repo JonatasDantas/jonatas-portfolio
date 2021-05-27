@@ -7,6 +7,7 @@ import Via from '../../assets/img/project-via.jpg';
 import Empreguin from '../../assets/img/plataforma-empregos.png';
 import DatingSI from '../../assets/img/DatingSI.png';
 import FlightNow from '../../assets/img/flight-now.png';
+import EstoqueTotal from '../../assets/img/estoque-total.PNG';
 
 import './Projects.scss';
 
@@ -23,6 +24,11 @@ function Projects() {
       imgRef: useRef(null),
     },
     {
+      name: 'Estoque Total - Plataforma para gerenciamento de estoque e relatórios da BLING',
+      img: EstoqueTotal,
+      imgRef: useRef(null),
+    },
+    {
       name: 'Projeto VIA - Tela de controle de funcionários com gráficos.',
       img: Via,
       imgRef: useRef(null),
@@ -33,13 +39,13 @@ function Projects() {
       imgRef: useRef(null),
     },
     {
-      name: 'Projeto DatingSI - Projeto educacional desenvolvido na Universidade de São Paulo, onde foi criado uma plataforma de relacionamentos e chat em tempo real.',
-      img: DatingSI,
+      name: 'Projeto Plataforma Empregos - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma plataforma de empregos.',
+      img: Empreguin,
       imgRef: useRef(null),
     },
     {
-      name: 'Projeto Plataforma Empregos - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma plataforma de empregos.',
-      img: Empreguin,
+      name: 'Projeto DatingSI - Projeto educacional desenvolvido na Universidade de São Paulo, onde foi criado uma plataforma de relacionamentos e chat em tempo real.',
+      img: DatingSI,
       imgRef: useRef(null),
     },
   ];

@@ -13,10 +13,11 @@
             .nav-item {
                 margin: 0 12px;
 
-                a {
+                span {
                     text-decoration: none;
                     color: #fff;
                     transition: 0.7s;
+                    cursor: pointer;
 
                     &.active {
                         color: #FF4F00;
@@ -101,7 +102,7 @@
             .MuiList-root {
                 color: #fff;
 
-                a {
+                span {
                     text-decoration: none;
                     color: #fff;
                     display: flex;

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import { useState, useEffect } from 'react';
 
 import {
@@ -85,6 +87,12 @@ function App() {
     };
   }, []);
 
+  function redirectToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+
+    window.scrollTo(0, element.offsetTop - 50);
+  }
+
   return (
     <div className="app">
       <Home />
@@ -103,7 +111,14 @@ function App() {
 
           {sections.map((item) => (
             <Typography variant="h6" className="nav-item" key={item.section}>
-              <a className={currentSection === item.section ? 'active' : ''} href={`#${item.section}`}>{item.text}</a>
+              <span
+                className={currentSection === item.section ? 'active' : ''}
+                onClick={() => redirectToSection(item.section)}
+                role="button"
+              >
+                {item.text}
+
+              </span>
             </Typography>
           ))}
         </Toolbar>
@@ -128,11 +143,11 @@ function App() {
         <List>
           {sections.map((item) => (
             <ListItem button key={item.section}>
-              <a href={`#${item.section}`}>
+              <span onClick={() => redirectToSection(item.section)} role="button">
                 <ListItemIcon>{item.icon}</ListItemIcon>
 
                 <ListItemText primary={item.text} />
-              </a>
+              </span>
             </ListItem>
           ))}
         </List>
