@@ -4,6 +4,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 import './Home.scss';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // import Logo from '../../assets/img/logo.png';
 
@@ -27,7 +28,13 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
   const textRef = useRef(null);
-  const textConstants = ['Freelancer', 'Programador Javascript', 'Programador Java'];
+  const { t } = useTranslation();
+  const textConstants = [
+    t('home.welcoming.freelancer'),
+    t('home.welcoming.javascript'),
+    t('home.welcoming.java'),
+    t('home.welcoming.flutter'),
+  ];
   const [textIndex, setTextIndex] = useState(1);
 
   useEffect(() => {
@@ -48,10 +55,10 @@ const Home = () => {
         <h1>Jonatas de Almeida Dantas</h1>
 
         <div className="welcoming-text">
-          <span>Desenvolvedor Full-Stack</span>
+          <span>{t('home.welcoming.fullStack')}</span>
         </div>
         <div className="welcoming-text">
-          <span>Desenvolvedor Mobile</span>
+          <span>{t('home.welcoming.mobile')}</span>
         </div>
         <div className="welcoming-text">
           <span className="animated" ref={textRef}>{textConstants[0]}</span>
@@ -65,7 +72,7 @@ const Home = () => {
           endIcon={<ArrowForwardIcon />}
           onClick={() => { window.location.href = '#about-me'; }}
         >
-          Conheça meu trabalho
+          {t('home.learnMoreButton')}
         </Button>
 
         <br />

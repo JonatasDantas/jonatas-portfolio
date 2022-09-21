@@ -23,6 +23,7 @@ import {
   WhatsApp,
 } from '@material-ui/icons';
 
+import { useTranslation } from 'react-i18next';
 import Home from './sections/home/Home';
 import AboutMe from './sections/about-me/AboutMe';
 import Skills from './sections/skills/Skills';
@@ -34,31 +35,32 @@ import Logo from './assets/img/logo-sem-fundo.png';
 import './App.scss';
 
 function App() {
+  const { t } = useTranslation();
   const [drawerOpen, setDrawer] = useState(false);
   const [currentSection, setCurrentSection] = useState(null);
   const sections = [
     {
-      text: 'Home',
+      text: t('home.title'),
       icon: <HomeIcon />,
       section: 'home',
     },
     {
-      text: 'Sobre mim',
+      text: t('aboutMe.title'),
       icon: <AccountBox />,
       section: 'about-me',
     },
     {
-      text: 'Habilidades',
+      text: t('skills.title'),
       icon: <Star />,
       section: 'skills',
     },
     {
-      text: 'Projetos',
+      text: t('projects.title'),
       icon: <PhotoLibrary />,
       section: 'projects',
     },
     {
-      text: 'Contato',
+      text: t('contactMe.title'),
       icon: <WhatsApp />,
       section: 'contact',
     },

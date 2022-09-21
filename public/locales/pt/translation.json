@@ -1,0 +1,26 @@
+{
+  "home": {
+    "title": "Home",
+    "learnMoreButton": "Conheça meu trabalho",
+    "welcoming": {
+      "fullStack": "Desenvolvedor Full-Stack",
+      "mobile": "Desenvolvedor Mobile",
+      "freelancer": "Freelancer",
+      "javascript": "Programador Javascript",
+      "java": "Programador Java",
+      "flutter": "Programador Flutter"
+    }
+  },
+  "aboutMe": {
+    "title": "Sobre mim"
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contactMe": {
+    "title": "Contato"
+  }
+}

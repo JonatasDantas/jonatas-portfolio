@@ -5,7 +5,7 @@ import SpeedIcon from '@material-ui/icons/Speed';
 import DevicesIcon from '@material-ui/icons/Devices';
 import CodeIcon from '@material-ui/icons/Code';
 import PeopleIcon from '@material-ui/icons/People';
-import avatarImg from '../../assets/img/avatar.jpg';
+import avatarImg from '../../assets/img/avatar.png';
 
 import './AboutMe.scss';
 
