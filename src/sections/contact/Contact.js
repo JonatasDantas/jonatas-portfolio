@@ -7,6 +7,7 @@ import {
 import { Close, WhatsApp } from '@material-ui/icons';
 import { Alert } from '@material-ui/lab';
 import { Form } from '@unform/web';
+import { useTranslation } from 'react-i18next';
 
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
@@ -15,6 +16,7 @@ import { Input } from '../../components';
 import './Contact.scss';
 
 function Contact() {
+  const { t } = useTranslation();
   const formRef = useRef();
   const [alert, setAlert] = useState(null);
 
@@ -23,12 +25,12 @@ function Contact() {
       formRef.current.setErrors({});
 
       const schema = Yup.object().shape({
-        name: Yup.string().required('Nome é obrigatório'),
-        email: Yup.string().email('Email inválido').required('Email é obrigatório'),
+        name: Yup.string().required(t('contactMe.fields.name.required')),
+        email: Yup.string().email(t('contactMe.fields.email.invalid')).required(t('contactMe.fields.email.required')),
         phone: Yup.string()
           .transform((phoneData) => (phoneData.match(/\d/g) ? phoneData.match(/\d/g).join('') : ''))
-          .min(11, 'Mínimo de 11 caracteres').required('Telefone é obrigatório'),
-        message: Yup.string().required('Mensagem obrigatória'),
+          .required(t('contactMe.fields.phone.required')),
+        message: Yup.string().required(t('contactMe.fields.message.required')),
       });
 
       await schema.validate(data, {
@@ -39,12 +41,12 @@ function Contact() {
         .then(() => {
           setAlert({
             success: true,
-            message: 'Obrigado pela mensagem! Irei entrar em contato assim que possível.',
+            message: t('contactMe.success'),
           });
         }, () => {
           setAlert({
             success: false,
-            message: 'Ocorreu um erro no envio da mensagem. Por favor, tente novamente ou me chame no Whatsapp.',
+            message: t('contactMe.error'),
           });
         });
     } catch (err) {
@@ -62,13 +64,13 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <div className="welcoming">Contato</div>
+      <div className="welcoming">{t('contactMe.title')}</div>
       <hr className="divider" />
 
       <div className="text">
-        Entre em contato comigo e faça um orçamento. Será um prazer atendê-lo(a)!
+        {t('contactMe.info.introduction')}
         <br />
-        Se preferir, meu whatsapp é (11) 96012-6820.
+        {t('contactMe.info.description')}
       </div>
 
       <Form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
@@ -95,22 +97,22 @@ function Contact() {
         </Collapse>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Input name="name" id="name" label="Nome" variant="outlined" />
+            <Input name="name" id="name" label={t('contactMe.fields.name.name')} variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Input name="email" id="email" label="E-mail" variant="outlined" />
+            <Input name="email" id="email" label={t('contactMe.fields.email.name')} variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Input name="phone" id="phone" label="Telefone" mask="(99) 99999-9999" variant="outlined" />
+            <Input name="phone" id="phone" label={t('contactMe.fields.phone.name')} mask="(99) 99999-9999" variant="outlined" />
           </Grid>
           <Grid item xs={12}>
-            <Input name="message" id="message" label="Mensagem" multiline rows={5} variant="outlined" />
+            <Input name="message" id="message" label={t('contactMe.fields.message.name')} multiline rows={5} variant="outlined" />
           </Grid>
         </Grid>
 
         <Grid className="buttons-container" container spacing={2}>
           <Grid item>
-            <Button type="submit" variant="contained" color="primary">Enviar Mensagem</Button>
+            <Button type="submit" variant="contained" color="primary">{t('contactMe.sendMessage')}</Button>
           </Grid>
           <Grid item>
             <Button
@@ -119,7 +121,7 @@ function Contact() {
               endIcon={<WhatsApp />}
               onClick={() => { window.open('https://api.whatsapp.com/send?phone=5511960126820', '_blank'); }}
             >
-              Me chame no Whatsapp
+              {t('contactMe.whatsapp')}
             </Button>
           </Grid>
         </Grid>

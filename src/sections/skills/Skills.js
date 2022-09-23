@@ -1,24 +1,27 @@
 import Slider from 'react-slick';
 import { isMobile } from 'react-device-detect';
+import { useTranslation } from 'react-i18next';
 
-import JavascriptLogo from '../../assets/img/javascript.png';
-import AngularLogo from '../../assets/img/angular.png';
-import ReactLogo from '../../assets/img/react.png';
-import VueLogo from '../../assets/img/vue.png';
-import NodeLogo from '../../assets/img/nodejs.png';
-import JavaLogo from '../../assets/img/java.png';
-import SpringBootLogo from '../../assets/img/spring-boot.png';
-import IonicLogo from '../../assets/img/ionic.png';
-import FlutterLogo from '../../assets/img/flutter.png';
-import SQLLogo from '../../assets/img/sql.jpg';
-import DockerLogo from '../../assets/img/docker.png';
-import LinuxLogo from '../../assets/img/linux.jpg';
+import JavascriptLogo from '../../assets/img/technologies/javascript.png';
+import AngularLogo from '../../assets/img/technologies/angular.png';
+import ReactLogo from '../../assets/img/technologies/react.png';
+import VueLogo from '../../assets/img/technologies/vue.png';
+import NodeLogo from '../../assets/img/technologies/nodejs.png';
+import JavaLogo from '../../assets/img/technologies/java.png';
+// import SpringBootLogo from '../../assets/img/technologies/spring-boot.png';
+import IonicLogo from '../../assets/img/technologies/ionic.png';
+import FlutterLogo from '../../assets/img/technologies/flutter.png';
+import SQLLogo from '../../assets/img/technologies/sql.jpg';
+import DockerLogo from '../../assets/img/technologies/docker.png';
+import LinuxLogo from '../../assets/img/technologies/linux.jpg';
+import AWSLogo from '../../assets/img/technologies/aws.png';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Skill.scss';
 
 function Skills() {
+  const { t } = useTranslation();
   const settings = {
     dots: true,
     infinite: true,
@@ -56,10 +59,10 @@ function Skills() {
       name: 'Java',
       logo: JavaLogo,
     },
-    {
-      name: 'Spring Boot',
-      logo: SpringBootLogo,
-    },
+    // {
+    //   name: 'Spring Boot',
+    //   logo: SpringBootLogo,
+    // },
     {
       name: 'Ionic',
       logo: IonicLogo,
@@ -67,6 +70,10 @@ function Skills() {
     {
       name: 'Flutter',
       logo: FlutterLogo,
+    },
+    {
+      name: 'AWS',
+      logo: AWSLogo,
     },
     {
       name: 'SQL',
@@ -84,16 +91,14 @@ function Skills() {
 
   return (
     <section className="skills" id="skills">
-      <div className="welcoming">Habilidades</div>
+      <div className="welcoming">{t('skills.title')}</div>
       <hr className="divider" />
 
       <div className="text">
-        Tenho um conjunto de habilidades muito diverso,
-        variando de tecnologias para desenvolvimento web,
-        mobile multiplataforma, design, infraestrutura e habilidades intrapessoais.
+        {t('skills.info.introduction')}
         <br />
         <br />
-        Estas são algumas tecnologias que venho trabalhando recentemente:
+        {t('skills.info.technologies')}
       </div>
 
       <Slider {...settings}>

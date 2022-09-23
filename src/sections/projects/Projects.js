@@ -3,48 +3,53 @@
 import { useRef } from 'react';
 import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 
-import Via from '../../assets/img/project-via.jpg';
-import Empreguin from '../../assets/img/plataforma-empregos.png';
-import DatingSI from '../../assets/img/DatingSI.png';
-import FlightNow from '../../assets/img/flight-now.png';
-import EstoqueTotal from '../../assets/img/estoque-total.PNG';
+import { useTranslation } from 'react-i18next';
+
+import VictorJulio from '../../assets/img/projects/victor-julio-landing.png';
+import Selmar from '../../assets/img/projects/selmar.png';
+import Via from '../../assets/img/projects/project-via.jpg';
+import Empreguin from '../../assets/img/projects/plataforma-empregos.png';
+import DatingSI from '../../assets/img/projects/DatingSI.png';
+import FlightNow from '../../assets/img/projects/flight-now.png';
+import EstoqueTotal from '../../assets/img/projects/estoque-total.PNG';
 
 import './Projects.scss';
 
 function Projects() {
+  const { t } = useTranslation();
   const projects = [
     {
-      name: 'Victor Julio Fotografia - Website institucional responsivo para o fotógrafo Victor Julio.',
-      img: 'https://victorjulio.com.br/assets/img/meta-preview.PNG',
+      name: t('projects.victorJulio'),
+      img: VictorJulio,
       imgRef: useRef(null),
     },
     {
-      name: 'Selmar Engenharia - Website institucional responsivo para a empresa Selmar Engenharia.',
-      img: 'https://selmarengenharia.com.br/assets/meta-preview.PNG',
+      name: t('projects.selmar'),
+      img: Selmar,
       imgRef: useRef(null),
     },
     {
-      name: 'Estoque Total - Plataforma para gerenciamento de estoque e relatórios da BLING',
+      name: t('projects.estoqueTotal'),
       img: EstoqueTotal,
       imgRef: useRef(null),
     },
     {
-      name: 'Projeto VIA - Tela de controle de funcionários com gráficos.',
+      name: t('projects.via'),
       img: Via,
       imgRef: useRef(null),
     },
     {
-      name: 'Projeto FlightNow - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma agência de viagens.',
+      name: t('projects.flightnow'),
       img: FlightNow,
       imgRef: useRef(null),
     },
     {
-      name: 'Projeto Plataforma Empregos - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma plataforma de empregos.',
+      name: t('projects.empregos'),
       img: Empreguin,
       imgRef: useRef(null),
     },
     {
-      name: 'Projeto DatingSI - Projeto educacional desenvolvido na Universidade de São Paulo, onde foi criado uma plataforma de relacionamentos e chat em tempo real.',
+      name: t('projects.datingSI'),
       img: DatingSI,
       imgRef: useRef(null),
     },
@@ -57,11 +62,11 @@ function Projects() {
   return (
     // uncompleted
     <section className="projects" id="projects">
-      <div className="welcoming">Meus Projetos</div>
+      <div className="welcoming">{t('projects.title')}</div>
       <hr className="divider" />
 
       <div className="text">
-        Abaixo encontram-se alguns dos projetos em que atuei.
+        {t('projects.info')}
       </div>
 
       <div className="projects-gallery">
@@ -71,7 +76,7 @@ function Projects() {
               projects.map((project) => (
                 <div key={project.name} className="wrapper">
                   <img alt={project.name} src={project.img} ref={project.imgRef} />
-                  <div className="overlay" onClick={() => handleClick(project)}>Veja o trabalho</div>
+                  <div className="overlay" onClick={() => handleClick(project)}>{t('projects.check')}</div>
                 </div>
               ))
             }

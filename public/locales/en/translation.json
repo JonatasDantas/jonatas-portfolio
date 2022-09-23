@@ -12,15 +12,77 @@
     }
   },
   "aboutMe": {
-    "title": "About Me"
+    "title": "About Me",
+    "info": {
+      "introduction": "Hi! My name is Jonatas, I'm a Full-Stack Developer. I work with highly complex applications that serve thousands of users worldwide.",
+      "myWork": "A 4 year experienced Full Stack Web Developer, graduated in Information Systems at University of São Paulo and with great industry experience building websites and web applications."
+    },
+    "advantages": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "I always focus on the quality of my code, following the best market practices"
+      },
+      "highPerformance": {
+        "title": "High Performance",
+        "description": "I seek to develop high performance applications, that execute smoothly with no lags"
+      },
+      "responsive": {
+        "title": "Responsiveness",
+        "description": "My layouts are always responsive and work on any device, large or small"
+      },
+      "multidisciplinary": {
+        "title": "Multidisciplinary",
+        "description": "I'm a multidisciplinary professional and can communicate well with big teams"
+      }
+    }
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "info": {
+      "introduction": "I have a varied skillset, having the ability to work with web, mobile, design, infrastructure and intrapersonal skills.",
+      "technologies": "These are some technologies that I've been working recently:"
+    }
   },
   "projects": {
-    "title": "My Projects"
+    "title": "My Projects",
+    "info": "Here are some projects that I built:",
+    "check": "Check the project",
+    "victorJulio": "Victor Julio photography - Responsive institutional website for the photographer Victor Julio",
+    "selmar": "Selmar Engeneering - Responsive institutional website for Selmar engeneering",
+    "estoqueTotal": "Estoque Total - Inventory management platform for e-commerce",
+    "via": "VIA - Employee management page with charts",
+    "flightnow": "FlightNow - Educational project built in University of São Paulo, simulating a travel agency",
+    "empregos": "Empregos - Educational project built in University of São Paulo, simulating a job agency",
+    "datingSI": "DatingSI - Educational project built in University of São Paulo, where i built a relationship platform with real time chat using Sockets"
   },
   "contactMe": {
-    "title": "Contat Me"
+    "title": "Contat Me",
+    "sendMessage": "Send message",
+    "whatsapp": "Send a message in Whatsapp",
+    "success": "Thank you for your message! I'll get in touch as soon as possible.",
+    "error": "An error ocurred when sending your message. Please try again or send me a message in Whatsapp",
+    "info": {
+      "introduction": "Get in touch with me so we can start working together!",
+      "description": "If you prefer, my number is 55+ 11 96012-6820."
+    },
+    "fields": {
+      "name": {
+        "name": "Name",
+        "required": "Name is required"
+      },
+      "email": {
+        "name": "E-mail",
+        "invalid": "Invalid Email",
+        "required": "Email is required"
+      },
+      "phone": {
+        "name": "Phone",
+        "required": "Phone is required"
+      },
+      "message": {
+        "name": "Message",
+        "required": "Message is required"
+      }
+    }
   }
 }
