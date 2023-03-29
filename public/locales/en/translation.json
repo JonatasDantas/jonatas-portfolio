@@ -44,12 +44,28 @@
     }
   },
   "projects": {
-    "title": "My Projects",
-    "info": "Here are some projects that I built:",
+    "title": "Latest Experiences",
+    "info": "Here are the last projects that I've worked on:",
     "check": "Check the project",
+    "titles": {
+      "victorJulio": "Victor Julio Fotografia",
+      "myPool": "My Pool",
+      "oneCard": "OneCard",
+      "trinity": "Trinity Gifts",
+      "estoqueTotal": "Estoque Total",
+      "chacaraDantas": "Dantas Party hall"
+    },
+    "descriptions": {},
+    "properties": {
+      "mobile": "Android and iOS App",
+      "web": "Responsive Website",
+      "designByMe": "Design by me",
+      "platform": "Web Platform"
+    },
     "victorJulio": "Victor Julio photography - Responsive institutional website for the photographer Victor Julio",
     "selmar": "Selmar Engeneering - Responsive institutional website for Selmar engeneering",
     "estoqueTotal": "Estoque Total - Inventory management platform for e-commerce",
+    "myPool": "MyPool - Calculator for Pool handling built with Flutter",
     "via": "VIA - Employee management page with charts",
     "flightnow": "FlightNow - Educational project built in University of São Paulo, simulating a travel agency",
     "empregos": "Empregos - Educational project built in University of São Paulo, simulating a job agency",

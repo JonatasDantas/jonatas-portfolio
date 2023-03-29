@@ -44,16 +44,31 @@
     }
   },
   "projects": {
-    "title": "Projetos",
-    "info": "Abaixo encontram-se alguns dos projetos em que atuei.",
-    "check": "Veja o trabalho",
-    "victorJulio": "Victor Julio Fotografia - Website institucional responsivo para o fotógrafo Victor Julio",
-    "selmar": "Selmar Engenharia - Website institucional responsivo para a empresa Selmar Engenharia",
-    "estoqueTotal": "Estoque Total - Plataforma para gerenciamento de estoque e relatórios da BLING",
-    "via": "VIA - Tela de controle de funcionários com gráficos",
-    "flightnow": "FlightNow - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma agência de viagens",
-    "empregos": "Empregos - Projeto educacional desenvolvido na Universidade de São Paulo, simulando uma plataforma de empregos",
-    "datingSI": "DatingSI - Projeto educacional desenvolvido na Universidade de São Paulo, onde foi criado uma plataforma de relacionamentos e chat em tempo real"
+    "title": "Últimas Experiências",
+    "info": "Abaixo encontram-se os últimos projetos em que atuei.",
+    "check": "Veja o projeto",
+    "titles": {
+      "victorJulio": "Victor Julio Fotografia",
+      "myPool": "Minha Piscina",
+      "oneCard": "OneCard",
+      "trinity": "Trinity Personalizados",
+      "estoqueTotal": "Estoque Total",
+      "chacaraDantas": "Chacara Dantas"
+    },
+    "descriptions": {
+      "victorJulio": "Website institucional responsivo para a agencia de fotografia Victor Julio. O Website teve seu design desenvolvido por mim e foi construído utilizando Angular, uma tecnologia moderna para criação de websites.",
+      "myPool": "Aplicativo multiplataforma para controle e gerenciamento de Piscinas. Conta com diversas funcionalidades como cadastro, calculadora para lotação máxima, cloro, PH e diversas outras funcionalidades úteis. O App teve seu design desenvolvido por mim e foi construído utilizando Flutter, tecnologia de ponta para aplicativos Android e iOS.",
+      "oneCard": "Plataforma Web e Mobile para clientes da empresa de cartões coorporativos OneCard. Possui funcionalidades como Login, Visualização de cartões, pagamento de contas, bloqueio de cartões, entre outras. Possui tanto Website responsivo como aplicativos multiplataforma, e foi desenvolvido utilizando Typescript em conjunto com o framework Capacitor, que gera Apps e Websites com uma única base de código.",
+      "trinity": "Website institucional responsivo para a empresa de produtos personalizados Trinity Personalizados. O Website teve seu design desenvolvido por mim e foi construído utilizando NextJS, tecnologia mais utilizada atualmente para construção de websites modernos. Possui integração com o Instagram em tempo real, preenchendo o portfolio com base nas imagens da plataforma.",
+      "estoqueTotal": "Plataforma web full-stack para controle de estoque, relatórios de venda e insights sobre E-commerces. Possui integracão com os ERPs Bling e Tiny, e realiza busca de produtos e vendas diariamente, através de Jobs assíncronos. A plataforma foi desenvolvida com arquitetura de microserviços, utilizando NodeJS como Framework backend, além de conceitos SOLID e ORMs para integração com o banco de dados, SQL. A parte Web foi desenvolvida utilizando React, uma das tecnologias mais utilizadas em projetos Web modernos.",
+      "chacaraDantas": "Website institucional responsivo para o espaço para festas Chacara Dantas. O Website teve seu design desenvolvido por mim e foi construído utilizando NextJS, tecnologia mais utilizada atualmente para construção de websites modernos."
+    },
+    "properties": {
+      "mobile": "App Android e iOS",
+      "web": "Website Responsivo",
+      "designByMe": "Design feito por mim",
+      "platform": "Sistema Web"
+    }
   },
   "contactMe": {
     "title": "Contato",

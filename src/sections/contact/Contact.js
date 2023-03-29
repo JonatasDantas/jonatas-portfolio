@@ -37,7 +37,7 @@ function Contact() {
         abortEarly: false,
       });
 
-      emailjs.send('service_lhhyp0k', 'template_e66p5ie', data, 'user_v8CGzXWhccEG6MdVEtZnX')
+      emailjs.send('service_53qoc56', 'template_4iv0564', data, 'lryOlxwwsUh-bs2MG')
         .then(() => {
           setAlert({
             success: true,
