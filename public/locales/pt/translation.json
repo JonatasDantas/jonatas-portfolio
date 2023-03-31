@@ -67,8 +67,14 @@
       "mobile": "App Android e iOS",
       "web": "Website Responsivo",
       "designByMe": "Design feito por mim",
-      "platform": "Sistema Web"
-    }
+      "platform": "Sistema Web",
+      "microservices": "Arquitetura de Microserviços"
+    },
+    "company": "Empresa",
+    "characteristics": "Características",
+    "access": "Acesse o projeto",
+    "details": "Detalhes",
+    "confidential": "Projeto confidencial"
   },
   "contactMe": {
     "title": "Contato",

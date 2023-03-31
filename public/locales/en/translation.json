@@ -55,21 +55,26 @@
       "estoqueTotal": "Estoque Total",
       "chacaraDantas": "Dantas Party hall"
     },
-    "descriptions": {},
+    "descriptions": {
+      "victorJulio": "Responsive institutional website for the photography agency Victor Julio. The website's design was developed by me and built using Angular, a modern technology for creating websites.",
+      "myPool": "Multiplatform application for pool control and management. It has several features such as registration, calculator for maximum occupancy, chlorine, pH, and various other useful functionalities. The app's design was developed by me and built using Flutter, cutting-edge technology for Android and iOS Apps.",
+      "oneCard": "Web and mobile platform for OneCard corporate card clients. It features functionalities such as login, card visualization, bill payment, card blocking, among others. It has both a responsive website and multi-platform applications and was developed using Typescript in conjunction with the Capacitor framework, which generates apps and websites with a single codebase.",
+      "trinity": "Responsive institutional website for Trinity Personalizados, a custom products company. The website's design was developed by me and built using NextJS, the most commonly used technology for building modern websites. It has real-time integration with Instagram, populating the portfolio based on the platform's images.",
+      "estoqueTotal": "Full-stack web platform for inventory control, sales reporting, and e-commerce insights. It integrates with the ERPs Bling and Tiny and performs daily searches for products and sales through asynchronous jobs. The platform was developed with a microservices architecture, using NodeJS as a backend framework, as well as ORMs for the relational database integration. Besides, it has built using several SOLID concepts. The web portion was developed using React, one of the most commonly used technologies in modern web projects.",
+      "chacaraDantas": "Responsive institutional website for Chacara Dantas, an event space for parties. The website's design was developed by me and built using NextJS, the most commonly used technology for building modern websites."
+    },
     "properties": {
       "mobile": "Android and iOS App",
       "web": "Responsive Website",
       "designByMe": "Design by me",
-      "platform": "Web Platform"
+      "platform": "Web Platform",
+      "microservices": "Microservices Architecture"
     },
-    "victorJulio": "Victor Julio photography - Responsive institutional website for the photographer Victor Julio",
-    "selmar": "Selmar Engeneering - Responsive institutional website for Selmar engeneering",
-    "estoqueTotal": "Estoque Total - Inventory management platform for e-commerce",
-    "myPool": "MyPool - Calculator for Pool handling built with Flutter",
-    "via": "VIA - Employee management page with charts",
-    "flightnow": "FlightNow - Educational project built in University of São Paulo, simulating a travel agency",
-    "empregos": "Empregos - Educational project built in University of São Paulo, simulating a job agency",
-    "datingSI": "DatingSI - Educational project built in University of São Paulo, where i built a relationship platform with real time chat using Sockets"
+    "company": "Company",
+    "characteristics": "Characteristics",
+    "access": "Access the project",
+    "details": "Details",
+    "confidential": "Confidential project"
   },
   "contactMe": {
     "title": "Contat Me",
